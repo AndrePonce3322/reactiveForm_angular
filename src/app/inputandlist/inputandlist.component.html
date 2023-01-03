@@ -1,0 +1,15 @@
+<!-- Creando un input -->
+<div class="contenido">
+    <div class="input">
+        <label>Agrega una ciudad </label>
+        <input type="text" class="form-control" style="width: 300px;" [(ngModel)]="cityAgregada" (keyup.enter)="enviarCiudad(cityAgregada)">
+        <button class="btn btn-info" (click)="enviarCiudad(cityAgregada) ">Add city</button>
+    </div>
+    <ul>
+        <li *ngFor="let cadaCity of ciudades" (click)="seleccion(cadaCity)" [ngClass]="{'input-bonito': cadaCity==liSeleccionado}">{{cadaCity}}</li>
+    </ul>
+    <!-- Limpiar -->
+    <button *ngIf="liSeleccionado" (click)="Clear()" class="btn btn-light">Clear selection</button> 
+    <!-- Enviar -->
+    <button *ngIf="liSeleccionado" (click)="AlertSelection()" class="btn btn-light">Enviar</button>
+</div>
