@@ -6,16 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  entrar!:string;
-  cambios!:string;
+  paises=[
+    'Croasia',
+    'Honduras',
+    'Panamá',
+    'México',
+    'Francia'
+  ];
 
-  
-
-  Login(){
-    this.entrar = "true";
-  }
-  exit(){
-    this.entrar = "false";
+  enviarChanges!:string;
+  paisSeleccionado(cadaPais:string){
+    this.enviarChanges = cadaPais;
   }
 
 }

@@ -1,1 +1,3 @@
-<app-inputandlist></app-inputandlist>
+<ul>
+    <app-lista *ngFor="let cadaPais of paises" (click)="paisSeleccionado(cadaPais)" [contryChanges]="enviarChanges">{{cadaPais}}</app-lista>
+</ul>
