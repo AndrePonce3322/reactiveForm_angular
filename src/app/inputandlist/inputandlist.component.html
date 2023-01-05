@@ -6,7 +6,7 @@
         <button class="btn btn-info" (click)="enviarCiudad(cityAgregada) ">Add city</button>
     </div>
     <ul>
-        <li *ngFor="let cadaCity of ciudades" (click)="seleccion(cadaCity)" [ngClass]="{'input-bonito': cadaCity==liSeleccionado}">{{cadaCity}}</li>
+        <li *ngFor="let cadaCity of ciudades" (click)="seleccion(cadaCity)" [ngClass]="{'input-bonito': cadaCity==liSeleccionado}" >{{cadaCity}}</li>
     </ul>
     <!-- Limpiar -->
     <button *ngIf="liSeleccionado" (click)="Clear()" class="btn btn-light">Clear selection</button> 

@@ -4,14 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { InputandlistComponent } from './inputandlist/inputandlist.component';
 import { FormsModule } from '@angular/forms';
-import { ProbandoOnChangeLiComponent } from './probando-on-change-li/probando-on-change-li.component';
-
+import { NgOnChangePruebaComponent } from './ng-on-change-prueba/ng-on-change-prueba.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InputandlistComponent,
-    ProbandoOnChangeLiComponent
+    NgOnChangePruebaComponent,
   ],
   imports: [
     BrowserModule,

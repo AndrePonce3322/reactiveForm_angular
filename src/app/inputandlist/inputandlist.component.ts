@@ -1,4 +1,4 @@
-import { Component, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, SimpleChanges, Input } from '@angular/core';
 
 @Component({
   selector: 'app-inputandlist',
@@ -6,6 +6,13 @@ import { Component, OnChanges, SimpleChanges } from '@angular/core';
   styleUrls: ['./inputandlist.component.css']
 })
 export class InputandlistComponent implements OnChanges {
+
+  @Input() detectarCambio!: string;
+
+  // Detectar cambios en los <li>
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log("Los cambios han sido estos ->", changes)
+  }
 
   // Variables utilizadas
   ciudades = [
@@ -24,6 +31,8 @@ export class InputandlistComponent implements OnChanges {
   // Agregar la clase seleccionada
   seleccion(seleccion: string) {
     this.liSeleccionado = seleccion;
+    this.detectarCambio = seleccion;
+    console.log(this.detectarCambio);
   }
   // Limpiar la seleccion
   Clear() {
@@ -44,11 +53,6 @@ export class InputandlistComponent implements OnChanges {
   // Botón de alertar la seleccion
   AlertSelection() {
     alert(`Enviando ${this.liSeleccionado}...`);
-  }
-  // Detectar cambios en los <li>
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log("Los cambios han sido estos ->", changes)
   }
 
 }

@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  paises=['Honduras', 'USA', 'Canadá'];
+  entrar!:string;
+  cambios!:string;
+
+  
+
+  Login(){
+    this.entrar = "true";
+  }
+  exit(){
+    this.entrar = "false";
+  }
+
 }
