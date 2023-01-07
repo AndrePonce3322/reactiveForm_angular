@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let cadaPais of paises" (click)="enviarPais(cadaPais)"
+    [ngClass]="{'every-li': cadaPais!=paisAMonitoriar, 'li-seleccionado': cadaPais==paisAMonitoriar}"
+    >{{cadaPais}}</li>
+</ul>
+<app-changemonitor [cambiosDeSeleccionPais]="paisAMonitoriar" ></app-changemonitor>

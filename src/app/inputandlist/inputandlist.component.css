@@ -1,7 +1,6 @@
 .contenido{
     width: 700px;
     padding-left: 25px;
-    margin: 10px
 }
 .contenido li{
     padding: 5px;
@@ -15,7 +14,8 @@
     margin-left: 10px;
 }
 .input-bonito{
-    background-color: brown;
+    background-color: var(--bs-info);
+    color: rgb(54, 45, 45);
     border-radius: 10px;
 }
 button:nth-of-type(2){

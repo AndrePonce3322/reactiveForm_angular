@@ -4,15 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { InputandlistComponent } from './inputandlist/inputandlist.component';
 import { FormsModule } from '@angular/forms';
-import { NgOnChangePruebaComponent } from './ng-on-change-prueba/ng-on-change-prueba.component';
 import { ListaComponent } from './lista/lista.component';
+import { ChangemonitorComponent } from './changemonitor/changemonitor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InputandlistComponent,
-    NgOnChangePruebaComponent,
     ListaComponent,
+    ChangemonitorComponent,
   ],
   imports: [
     BrowserModule,
