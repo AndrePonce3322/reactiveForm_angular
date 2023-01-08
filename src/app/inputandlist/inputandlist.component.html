@@ -3,17 +3,20 @@
     <div class="input">
         <label>Agrega una ciudad </label>
         <input type="text" class="form-control" style="width: 300px;" [(ngModel)]="cityAgregada" (keyup.enter)="enviarCiudad(cityAgregada)">
+        <input type="text" class="form-control" style="width: 300px;" placeholder="Buscar en la lista" [(ngModel)]="criterio">
         <button class="btn btn-info" (click)="enviarCiudad(cityAgregada) ">Add city</button>
     </div>
+    
     <hr>
     <ul>
-        <li *ngFor="let cadaCity of ciudades" (click)="seleccion(cadaCity)" [ngClass]="{'input-bonito': cadaCity==liSeleccionado}" >{{cadaCity | titlecase}}</li>
+        <li *ngFor="let cadaCity of (ciudades | detectarbusqueda:criterio) " (click)="seleccion(cadaCity)" [ngClass]="{'input-bonito': cadaCity==liSeleccionado}" >{{cadaCity | titlecase}}</li>
     </ul>
     <!-- Limpiar --> 
     <button *ngIf="liSeleccionado" (click)="Clear()" class="btn btn-info">Clear selection</button>
     <!-- Enviar -->
     <button *ngIf="liSeleccionado" (click)="AlertSelection()" class="btn btn-info">Enviar</button>
 </div>
+
 
 <!-- Observando los cambios de cada ciudad -->
 <app-changemonitor [cambiosDeCiudad]="liSeleccionado"></app-changemonitor>

@@ -7,16 +7,20 @@ import { FormsModule } from '@angular/forms';
 import { ListaComponent } from './lista/lista.component';
 import { ChangemonitorComponent } from './changemonitor/changemonitor.component';
 
+// Pipes
+import { pipeFilter } from './pipes/filter.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     InputandlistComponent,
     ListaComponent,
     ChangemonitorComponent,
+    pipeFilter,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

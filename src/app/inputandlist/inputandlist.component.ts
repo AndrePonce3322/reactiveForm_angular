@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class InputandlistComponent{
 
+  criterio!:string;
+
   // Variables utilizadas
   ciudades = [
     'Nueva York',
