@@ -10,14 +10,20 @@ export class InputandlistComponent{
   criterio!:string;
 
   // Variables utilizadas
-  ciudades = [
-    'Nueva York',
-    'Londres',
-    'París',
-    'Tokio',
-    'Hong Kong',
-    'Dubai'
+  ciudades: string[] = [
+    "Nueva York",
+    "Londres",
+    "Paris",
+    "Moscú",
+    "Tokio",
+    "Sídney",
+    "México DF",
+    "Toronto",
+    "San Francisco",
+    "Los Ángeles",
+    "Miami"
   ];
+  
   liSeleccionado!: string;
   cityAgregada!: string;
 

@@ -1,6 +1,15 @@
+
+
 <ul>
-    <li *ngFor="let cadaPais of paises" (click)="enviarPais(cadaPais)"
-    [ngClass]="{'every-li': cadaPais!=paisAMonitoriar, 'li-seleccionado': cadaPais==paisAMonitoriar}"
-    >{{cadaPais}}</li>
+    <!-- Buscador -->
+    <input type="text" placeholder="Buscador en la lista" [(ngModel)]="buscar">
+
+    <li *ngFor="let cadaPais of (paises | buscadorInput: buscar)" (click)="enviarPais(cadaPais)"
+    [ngClass]="{'every-li': cadaPais!=paisAMonitoriar, 'li-seleccionado': cadaPais==paisAMonitoriar}">
+    {{cadaPais}}
+    </li>
 </ul>
 <app-changemonitor [cambiosDeSeleccionPais]="paisAMonitoriar" ></app-changemonitor>
+
+<!-- <button (click)="mostrarDatosTomados()">{{'Apreta para saber los valores' | titlecase}}</button>
+<p *ngIf="vacio">{{vacio}}</p> -->

@@ -1,1 +1,19 @@
 <app-inputandlist></app-inputandlist>
+<hr><h3>{{'Formularios template driven' | titlecase}}</h3>
+<!-- 
+Para trabajar con formularios template driven hacen falta  3 cosas 
+1) Darle nombre a nuestro formulario mediante template reference  #myForm="ngForm" 
+2) (ngSubmit)="onSubmitForm(myForm.value); 
+3) cada campo del formulario debe de tener el atributo nombre y la directiva NgModel
+ -->
+
+ <form (ngSubmit)="tomarValores(inputValue.value)" #inputValue="ngForm">
+
+    <!-- Nombre -->
+    <label for="name">Escribe tu nombre</label>
+    <input type="text" name="name" ngModel>
+
+    <!-- Enviar -->
+    <button type="submit" class="btn btn-info d-grid col-1">Enviar data</button>
+
+ </form>

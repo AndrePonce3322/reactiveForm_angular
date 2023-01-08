@@ -6,17 +6,23 @@ import { Pipe, PipeTransform } from "@angular/core";
 
 export class pipeFilter implements PipeTransform{
 
-
-
     transform(value: string[], args: string):string[] {
 
-        let resultado: string[] = [];
+        if(args == null || args== undefined ){
+            return value;
+        }
 
-        for(const valores of value){
-            if(valores.indexOf(args) != 1){
-                resultado = [...resultado, valores];
+        let resultado: string[] = [];
+        args = args.normalize('NFD');
+
+        for(let valores of value){
+            // Sin acentos
+            valores = valores.normalize('NFD');
+
+            if(valores.toLowerCase().indexOf(args.toLowerCase()) != -1){
+                resultado.push(valores);
             }
         }
-        return resultado
+        return resultado;
     } 
 } 
