@@ -11,15 +11,11 @@ export class pipeFilter implements PipeTransform{
         if(args == null || args== undefined ){
             return value;
         }
-
         let resultado: string[] = [];
-        args = args.normalize('NFD');
 
         for(let valores of value){
-            // Sin acentos
-            valores = valores.normalize('NFD');
-
             if(valores.toLowerCase().indexOf(args.toLowerCase()) != -1){
+                // Añadir al resultado los valores de la lista que se encuentran en args
                 resultado.push(valores);
             }
         }
