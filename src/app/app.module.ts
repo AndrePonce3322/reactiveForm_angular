@@ -10,6 +10,7 @@ import { ChangemonitorComponent } from './changemonitor/changemonitor.component'
 // Pipes
 import { pipeFilter } from './pipes/filter.pipe';
 import { buscadorPipe } from './pipeBuscador/buscador.pipe';
+import { FormularioComponent } from './formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { buscadorPipe } from './pipeBuscador/buscador.pipe';
     ChangemonitorComponent,
     pipeFilter,
     buscadorPipe,
+    FormularioComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,51 @@
+<form (ngSubmit)="FormValue(formulario.value)" #formulario="ngForm">
+    <div class="contenedor_form">
+        <div class="mb-3">
+            <div class="display_flex_row">
+
+                <div class="display_flex">
+                    <label class="form-label" for="nombres" aria-required="true">Nombres</label>
+                    <input type="text" class="form-control" placeholder="example: Juan paquito" name="nombres" [(ngModel)]="model.nombres" required #nombre="ngModel">
+                    <!-- Pristine significa ocultar los valores si el usuario no ha interactuado con el input -->
+                    <!-- En otras palabras, mostrar si yo escribo en el input -->
+                    <div [hidden]="nombre.pristine || nombre.valid" class="alert alert-danger">Nombre requerido</div>
+                </div>
+
+                <div class="display_flex">
+                    <label class="form-label" for="apellidos">Apellidos</label>
+                    <input type="text" class="form-control" placeholder="example: Sevilla Molinos" name="apellidos" [(ngModel)]="model.apellidos" required #apellido="ngModel">
+                    <div [hidden]="apellido.pristine || apellido.valid" class="alert alert-danger">Apellido requerido</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">{{'Ciudad de procedencia' | titlecase}}</label>
+
+            <select [(ngModel)]="model.ciudad" name="ciudad" class="form-select" style="width: 46%;" required>
+                <option *ngFor="let cadaCiudad of ciudades" value="{{cadaCiudad}}">{{cadaCiudad}}</option>
+            </select>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" name="requisitoEdad" [(ngModel)]="model.requisitoEdad">
+            <label class="form-check-label">¿Eres mayor de 18 años?</label>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="correo">{{'correo electronico' | titlecase}}</label>
+            <input type="email" class="form-control" placeholder="example: juanpaquito@gmail.com" name="correo" [(ngModel)]="model.correo" required #correo="ngModel">
+            <div class="alert alert-danger" [hidden]="correo.valid || correo.pristine">Tu correo electronico es requerido </div>
+        </div>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Deja un comentario aqui opcional" [(ngModel)]="model.comentario" name="comentario" #comment="ngModel" required></textarea>
+            <label for="floatingTextarea">Comentario</label>
+            <div [hidden]="comment.pristine || comment.valid" class="alert-danger alert">Tienes que agregar un comentario</div>
+        </div>
+        <br>
+        <div class="buttonForm d-grid col-4">
+            <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid">Enviar</button>
+        </div>
+    </div>
+</form>

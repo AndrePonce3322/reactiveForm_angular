@@ -1,0 +1,23 @@
+form{
+    margin: 10px 0px 10px 10px;
+}
+.contenedor_form{
+    position: relative;
+    padding: 10px;
+    width: 40%;
+    border: 1px black solid;
+    box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.233);
+    border-radius: 5px;
+}
+.display_flex_row{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.display_flex{
+    width: 46%;
+}
+.alert-danger{
+    position: absolute !important;
+    z-index: 100;
+}

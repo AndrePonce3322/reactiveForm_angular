@@ -7,10 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  // Mostrar los valores del form en consola
-  tomarValores(formValue: any){
-    alert(`¡Datos enviado correctamente!`);
-    console.log(formValue);
-  }
-
 }
