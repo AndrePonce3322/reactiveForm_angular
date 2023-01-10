@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { InputandlistComponent } from './inputandlist/inputandlist.component';
-import { FormsModule } from '@angular/forms';
 import { ListaComponent } from './lista/lista.component';
 import { ChangemonitorComponent } from './changemonitor/changemonitor.component';
 
@@ -12,6 +11,11 @@ import { pipeFilter } from './pipes/filter.pipe';
 import { buscadorPipe } from './pipeBuscador/buscador.pipe';
 import { FormularioComponent } from './formulario/formulario.component';
 import { FormSimpleComponent } from './form-simple/form-simple.component';
+import { ContactReactiveComponent } from './contact-reactive/contact-reactive.component';
+
+// Formularios
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,10 +27,12 @@ import { FormSimpleComponent } from './form-simple/form-simple.component';
     buscadorPipe,
     FormularioComponent,
     FormSimpleComponent,
+    ContactReactiveComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

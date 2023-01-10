@@ -1,0 +1,21 @@
+<form (ngSubmit)="takeDates(formulario.value)" #formulario="ngForm">
+    <div class="contenedor">
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-control" name="name" required formControlName="name">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Ciudad</label>
+            <select class="form-select" name="ciudad" formControlName="ciudad">
+                <option value="Tegucigalpa">Tegucigalpa</option>
+                <option value="Gracias a Dios">Gracias a Dios</option>
+                <option value="San Pedro Sula">San Pedro Sula</option>
+              </select>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" name="edad" required formControlName="checkAdult">
+            <label class="form-check-label">Selecciona si eres mayor de edad</label>
+        </div>
+        <button type="submit" class="btn btn-primary col-2" [disabled]="formulario.invalid"> Enviar Datos</button>
+    </div>
+</form>

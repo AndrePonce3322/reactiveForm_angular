@@ -12,7 +12,7 @@
         <li *ngFor="let cadaCity of (ciudades | detectarbusqueda: criterio)" (click)="seleccion(cadaCity)" [ngClass]="{'input-bonito': cadaCity==liSeleccionado}" >{{cadaCity | titlecase}}</li>
     </ul>
     <!-- Limpiar --> 
-    <button *ngIf="liSeleccionado" (click)="Clear()" class="btn btn-light">Retirar seleccion</button>
+    <button *ngIf="liSeleccionado" (click)="Clear()" class="btn btn-light">Retirarw seleccion</button>
     <!-- Enviar -->
     <button *ngIf="liSeleccionado" (click)="AlertSelection()" class="btn btn-light">Enviar</button>
 </div>
