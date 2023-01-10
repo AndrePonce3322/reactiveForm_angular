@@ -1,5 +1,5 @@
 .contenido{
-    width: 900px;
+    width: 100%;
     padding-left: 25px;
 }
 .contenido li{
@@ -9,8 +9,9 @@
 .input{
     display: flex;
     align-items: center;
+    align-items: center;
 }
-.input *{
+.input button{
     margin-left: 10px;
 }
 .input-bonito{

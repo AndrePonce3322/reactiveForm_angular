@@ -1,10 +1,10 @@
 form{
-    margin: 10px 0px 10px 10px;
+    margin: 10px;
 }
 .contenedor_form{
     position: relative;
+    color: white;
     padding: 10px;
-    width: 40%;
     border: 1px black solid;
     box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.233);
     border-radius: 5px;
@@ -21,3 +21,22 @@ form{
     position: absolute !important;
     z-index: 100;
 }
+.fondoDepantalla{
+    position: absolute;
+    background: url('https://www.xtrafondos.com/wallpapers/navidad-gato-negro-11194.jpg');
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    filter: brightness(0.3);
+}
+
+/* 
+background: url('https://www.xtrafondos.com/wallpapers/navidad-gato-negro-11194.jpg');
+    color: white;
+    background-position: center;
+    background-size: cover;
+     */

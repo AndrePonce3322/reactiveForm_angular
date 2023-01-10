@@ -53,7 +53,7 @@ export class InputandlistComponent{
   }
   // Botón de alertar la seleccion
   AlertSelection() {
-    alert(`Enviando ${this.liSeleccionado}...`);
+    alert(`¡Enviando ${this.liSeleccionado} correctamente a la base de datos!`);
   }
 
 }

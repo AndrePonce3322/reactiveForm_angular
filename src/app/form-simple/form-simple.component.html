@@ -1,0 +1,26 @@
+<form (ngSubmit)="enviarDatos(enviar.value)" #enviar="ngForm">
+
+
+
+    <!-- Nombre -->
+    <input type="text" name="nombre" placeholder="write your first name" ngModel required #nombreInput="ngModel">
+    <div [hidden]="nombreInput.valid || nombreInput.pristine" class="alert alert-danger">Este campo es requerido</div>
+
+
+
+    <!-- Apellido --><br><br>
+    <input type="checkbox" name="edad" [(ngModel)]="model.edad" required #edad="ngModel">
+    <label for="edad"> ⬅ ¿Eres mayor de 18 años?</label>
+    <div [hidden]="edad.valid || edad.pristine" class="alert alert-danger">Necesitas ser mayor de edad</div>
+
+
+
+    <!-- Enviar --><br><br>
+    <button type="submit" [disabled]="enviar.invalid">Enviar</button>
+
+
+
+</form> 
+
+
+<pre>{{enviar.value | json}}</pre>

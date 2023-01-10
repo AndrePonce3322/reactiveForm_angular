@@ -11,6 +11,7 @@ import { ChangemonitorComponent } from './changemonitor/changemonitor.component'
 import { pipeFilter } from './pipes/filter.pipe';
 import { buscadorPipe } from './pipeBuscador/buscador.pipe';
 import { FormularioComponent } from './formulario/formulario.component';
+import { FormSimpleComponent } from './form-simple/form-simple.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormularioComponent } from './formulario/formulario.component';
     pipeFilter,
     buscadorPipe,
     FormularioComponent,
+    FormSimpleComponent,
   ],
   imports: [
     BrowserModule,
