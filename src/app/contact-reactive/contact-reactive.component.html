@@ -1,21 +1,63 @@
-<form (ngSubmit)="takeDates(formulario.value)" #formulario="ngForm">
-    <div class="contenedor">
-        <div class="mb-3">
-            <label class="form-label">Nombre</label>
-            <input type="text" class="form-control" name="name" required formControlName="name">
+<form (ngSubmit)="tomarDatos()" [formGroup]="formulario">
+    <div class="conteiner">
+        <div class="name">
+            <label for="name">Escribe tu nombre</label>
+            <input class="form-control" type="text" name="name" formControlName="name">
+
+            <div *ngIf="formulario.get('name')?.touched && formulario.get('name')?.errors?.['required'] "
+                class="alert alert-danger">Este campo es requerido</div>
+            <div *ngIf="formulario.get('name')?.touched && formulario.get('name')?.errors?.['minlength'].requiredLength" class="alert alert-danger">Tu nombre debe de tener al menos {{formulario.get('name')?.errors?.['minlength'].requiredLength}} caracteres</div>
+
         </div>
-        <div class="mb-3">
-            <label class="form-label">Ciudad</label>
-            <select class="form-select" name="ciudad" formControlName="ciudad">
-                <option value="Tegucigalpa">Tegucigalpa</option>
-                <option value="Gracias a Dios">Gracias a Dios</option>
-                <option value="San Pedro Sula">San Pedro Sula</option>
-              </select>
+
+        <label for="ciudad">Selecciona tu ciudad</label>
+        <select class="form-select" name="ciudad" formControlName="ciudad">
+            <option value="Tegucigalpa">Tegucigalpa</option>
+            <option value="San Pedro Sula">San Pedro Sula</option>
+            <option value="Ocotepeque">Ocotepeque</option>
+        </select>
+
+        <div class="checkAdult form-check">
+            <input class="form-check-input" type="checkbox" name="checkAdult" formControlName="checkAdult" required>
+            <label class="form-check-label" for="checkAdult">Eres mayor de edad?</label>
+
+            <div *ngIf="formulario.get('checkAdult')?.touched && formulario.get('checkAdult')?.errors?.['required'] "
+                class="alert alert-danger">Este campo es requerido</div>
+
         </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" name="edad" required formControlName="checkAdult">
-            <label class="form-check-label">Selecciona si eres mayor de edad</label>
+
+        <div class="form-floating">
+            <textarea class="form-control" name="textTarea" placeholder="Comentario"
+                formControlName="textTarea"></textarea>
+            <label for="textTarea">Agrega un comentario</label>
+
+            <div *ngIf="formulario.get('textTarea')?.touched && formulario.get('textTarea')?.errors?.['required']" class="alert alert-danger">Tienes que agregar un comentario</div>
+            <div *ngIf="formulario.get('textTarea')?.touched && formulario.get('textTarea')?.errors?.['minlength'].requiredLength" class="alert alert-danger">Tu comentario debe de ser de al menos {{formulario.get('textTarea')?.errors?.['minlength'].requiredLength}} caracteres</div>
+
+
         </div>
-        <button type="submit" class="btn btn-primary col-2" [disabled]="formulario.invalid"> Enviar Datos</button>
+
+
+
+        <button class="btn btn-primary" type="submit" [disabled]="formulario.invalid"> Enviar</button>
+        <div *ngIf="boleano" class="alert alert-success" style="margin-top: 10px;">
+            
+        <h6>Datos enviados correctamente!</h6>
+        <pre>Formularios enviados: {{mostrardata.length}}</pre>
+        <pre>{{mostrardata | json}}</pre>   
+
+        </div>
+
     </div>
+
+
 </form>
+
+<!-- Notas:
+
+#Para un formulario reactivo tenemos que poner en cada input o selector la propiedad de FormControlName
+#Cada formulario tiene su nombre de grupo, debemos asignarlo en el form escribiendo [formGroup]="<namegroup>"
+#En nuestro archivp typeScript debemos asignar la variable que le pusimos al nombre del grupo: <namegroup>!: FormGroup;
+
+
+-->

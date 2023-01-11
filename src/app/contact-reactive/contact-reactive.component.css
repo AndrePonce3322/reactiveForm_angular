@@ -1,3 +1,35 @@
-.contenedor{
-    width: 50%;
+.conteiner {
+    width: 100%;
+    padding: 10px;
 }
+
+.btn {
+    margin-top: 5px;
+}
+
+.form-control, select{
+    background-color: #181a1b;
+    color: #d1cdc7;
+    border-color: #383d3f !important;
+}
+.alert-danger{
+    background: #6f131d;
+    color: #d85b67;
+    border-color: #383d3f !important;
+}
+.alert-success{
+    background: #203d33;
+    color: #88e9bc;
+}
+
+/* 
+
+body{
+    color: #d1cdc7
+}
+
+
+
+
+
+ */
